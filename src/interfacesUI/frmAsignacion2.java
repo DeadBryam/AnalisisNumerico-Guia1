@@ -61,7 +61,7 @@ public class frmAsignacion2 extends javax.swing.JFrame {
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel2.setText("Raiz:");
+        jLabel2.setText("Resultado:");
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 100, -1, 20));
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -70,10 +70,10 @@ public class frmAsignacion2 extends javax.swing.JFrame {
         jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 130, -1, 20));
 
         txtError.setEditable(false);
-        jPanel1.add(txtError, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 130, 200, 20));
+        jPanel1.add(txtError, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 130, 200, 20));
 
         txtRaiz.setEditable(false);
-        jPanel1.add(txtRaiz, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 100, 200, 20));
+        jPanel1.add(txtRaiz, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 100, 200, 20));
 
         jButton1.setText("Calcular");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -111,6 +111,9 @@ public class frmAsignacion2 extends javax.swing.JFrame {
     
         jTable1.setModel(asignacion.calcularValor(Math.toRadians(Integer.parseInt(txtValor.getText())), Integer.parseInt(txtCifras.getText())));
         jTable1.sizeColumnsToFit(0);
+        txtError.setText(jTable1.getValueAt(jTable1.getModel().getRowCount()-1, 2).toString());
+        txtRaiz.setText(jTable1.getValueAt(jTable1.getModel().getRowCount()-1, 1).toString());
+        
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
