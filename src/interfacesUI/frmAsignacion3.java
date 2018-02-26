@@ -1,5 +1,9 @@
 package interfacesUI;
 
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
+import metodos.Asignacion3;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -15,9 +19,16 @@ public class frmAsignacion3 extends javax.swing.JFrame {
     /**
      * Creates new form frmAsignacion3
      */
+    
+    Asignacion3 asig = new Asignacion3();
+    DefaultTableModel model1,model2;
+    
     public frmAsignacion3() {
         initComponents();
         this.setLocationRelativeTo(null);
+        pnlTabla.show(false);
+        btnMostrarModel1.setEnabled(false);
+        btnMostrarModel2.setEnabled(false);
     }
 
     /**
@@ -29,6 +40,10 @@ public class frmAsignacion3 extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        pnlTabla = new javax.swing.JPanel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        tabla1 = new javax.swing.JTable();
+        jButton3 = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -44,11 +59,31 @@ public class frmAsignacion3 extends javax.swing.JFrame {
         txtConclusion = new javax.swing.JTextField();
         txtError2 = new javax.swing.JTextField();
         txtCifras = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
+        btnCalcular = new javax.swing.JButton();
+        btnMostrarModel1 = new javax.swing.JButton();
+        btnMostrarModel2 = new javax.swing.JButton();
         jLabel8 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        pnlTabla.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        tabla1.setModel(new DefaultTableModel(new Object[]{"Iteracion", "Resultado", "Error Aproximado"}, 0));
+        jScrollPane1.setViewportView(tabla1);
+
+        pnlTabla.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 30, 360, 430));
+
+        jButton3.setText("X");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
+        pnlTabla.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 0, -1, -1));
+
+        getContentPane().add(pnlTabla, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, -1, -1));
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -106,26 +141,78 @@ public class frmAsignacion3 extends javax.swing.JFrame {
         jPanel1.add(txtError2, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 220, 155, 20));
         jPanel1.add(txtCifras, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 20, 51, 20));
 
-        jButton1.setText("Calcular");
-        jButton1.setActionCommand("Calcular");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        btnCalcular.setText("Calcular");
+        btnCalcular.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                btnCalcularActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 40, -1, 20));
+        jPanel1.add(btnCalcular, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 40, -1, 20));
+
+        btnMostrarModel1.setText(">");
+        btnMostrarModel1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnMostrarModel1ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnMostrarModel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 110, 40, 20));
+
+        btnMostrarModel2.setText(">");
+        btnMostrarModel2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnMostrarModel2ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnMostrarModel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 140, 40, 20));
 
         jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/back.jpg"))); // NOI18N
-        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(-170, -50, 590, 380));
+        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(-170, -50, 510, 310));
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 390, 310));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 390, 300));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void btnCalcularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCalcularActionPerformed
+       if(txtCifras.getText().isEmpty()){
+           JOptionPane.showMessageDialog(null, "Ingrese la cantidad de cifras.");
+       }else{
+        btnMostrarModel1.setEnabled(true);
+        btnMostrarModel2.setEnabled(true);
+        txtValorVerdadero.setText(String.valueOf(asig.getVv()));
+        model1 = asig.metodo1(Integer.parseInt(txtCifras.getText()),5);
+        txtValorMetodo1.setText(String.valueOf(asig.getRes1()));
+        txtError1.setText(String.valueOf(asig.getEr1()));
+       }
+    }//GEN-LAST:event_btnCalcularActionPerformed
 
-    }//GEN-LAST:event_jButton1ActionPerformed
+    private void btnMostrarModel2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMostrarModel2ActionPerformed
+        tabla1.setModel(model2);
+        tabla1.sizeColumnsToFit(0);
+        btnCalcular.show(false);
+        btnMostrarModel1.show(false);
+        btnMostrarModel2.show(false);
+        txtCifras.show(false);
+        pnlTabla.show(true);
+    }//GEN-LAST:event_btnMostrarModel2ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        pnlTabla.show(false);
+        btnCalcular.show(true);
+        btnMostrarModel1.show(true);
+        btnMostrarModel2.show(true);
+        txtCifras.show(true);
+    }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void btnMostrarModel1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMostrarModel1ActionPerformed
+        tabla1.setModel(model1);
+        tabla1.sizeColumnsToFit(0);
+        btnCalcular.show(false);
+        btnMostrarModel1.show(false);
+        btnMostrarModel2.show(false);
+        txtCifras.show(false);
+        pnlTabla.show(true);
+    }//GEN-LAST:event_btnMostrarModel1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -138,7 +225,7 @@ public class frmAsignacion3 extends javax.swing.JFrame {
          */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
+                if ("Windows".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
                 }
@@ -163,7 +250,10 @@ public class frmAsignacion3 extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton btnCalcular;
+    private javax.swing.JButton btnMostrarModel1;
+    private javax.swing.JButton btnMostrarModel2;
+    private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -173,6 +263,9 @@ public class frmAsignacion3 extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JPanel pnlTabla;
+    private javax.swing.JTable tabla1;
     private javax.swing.JTextField txtCifras;
     private javax.swing.JTextField txtConclusion;
     private javax.swing.JTextField txtError1;
