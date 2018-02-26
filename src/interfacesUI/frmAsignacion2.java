@@ -5,6 +5,7 @@
  */
 package interfacesUI;
 
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import metodos.Asignacion2;
 
@@ -15,7 +16,7 @@ import metodos.Asignacion2;
 public class frmAsignacion2 extends javax.swing.JFrame {
 
     Asignacion2 asignacion = new Asignacion2();
-    
+
     /**
      * Creates new form frmAasignacion2
      */
@@ -37,12 +38,13 @@ public class frmAsignacion2 extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
         txtCifras = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         txtError = new javax.swing.JTextField();
-        txtRaiz = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
+        txtResultado = new javax.swing.JTextField();
+        btnCalcular = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
         txtValor = new javax.swing.JTextField();
@@ -55,9 +57,14 @@ public class frmAsignacion2 extends javax.swing.JFrame {
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setText("Ingrese la cantidad de cirfras significativas:");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, -1, 20));
-        jPanel1.add(txtCifras, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 20, 50, 20));
+        jLabel1.setText("Ingrese el valor de x:");
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 50, -1, 20));
+
+        jLabel5.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel5.setText("Ingrese la cantidad de cirfras significativas:");
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, -1, 20));
+        jPanel1.add(txtCifras, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 20, 60, 20));
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
@@ -72,16 +79,16 @@ public class frmAsignacion2 extends javax.swing.JFrame {
         txtError.setEditable(false);
         jPanel1.add(txtError, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 130, 200, 20));
 
-        txtRaiz.setEditable(false);
-        jPanel1.add(txtRaiz, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 100, 200, 20));
+        txtResultado.setEditable(false);
+        jPanel1.add(txtResultado, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 100, 200, 20));
 
-        jButton1.setText("Calcular");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        btnCalcular.setText("Calcular");
+        btnCalcular.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                btnCalcularActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 50, -1, -1));
+        jPanel1.add(btnCalcular, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 20, -1, -1));
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -96,25 +103,27 @@ public class frmAsignacion2 extends javax.swing.JFrame {
         ));
         jScrollPane1.setViewportView(jTable1);
 
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 177, -1, 280));
-        jPanel1.add(txtValor, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 20, 60, -1));
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 177, 510, 280));
+        jPanel1.add(txtValor, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 50, 60, 20));
 
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/back.jpg"))); // NOI18N
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 0, 710, 480));
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(-30, 0, 620, 510));
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, 570, 490));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 570, 490));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-    
-        jTable1.setModel(asignacion.calcularValor(Math.toRadians(Float.parseFloat(txtValor.getText())), Integer.parseInt(txtCifras.getText())));
-        jTable1.sizeColumnsToFit(0);
-        txtError.setText(jTable1.getValueAt(jTable1.getModel().getRowCount()-1, 2).toString());
-        txtRaiz.setText(jTable1.getValueAt(jTable1.getModel().getRowCount()-1, 1).toString());
-        
-    }//GEN-LAST:event_jButton1ActionPerformed
+    private void btnCalcularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCalcularActionPerformed
+        if (txtCifras.getText().isEmpty() || txtValor.getText().isEmpty()) {
+            JOptionPane.showMessageDialog(null, "Falta ingresar datos.");
+        } else {
+            jTable1.setModel(asignacion.calcularValor(Math.toRadians(Float.parseFloat(txtValor.getText())), Integer.parseInt(txtCifras.getText())));
+            jTable1.sizeColumnsToFit(0);
+            txtError.setText(jTable1.getValueAt(jTable1.getModel().getRowCount() - 1, 2).toString());
+            txtResultado.setText(jTable1.getValueAt(jTable1.getModel().getRowCount() - 1, 1).toString());
+        }
+    }//GEN-LAST:event_btnCalcularActionPerformed
 
     /**
      * @param args the command line arguments
@@ -153,17 +162,18 @@ public class frmAsignacion2 extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton btnCalcular;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
     private javax.swing.JTextField txtCifras;
     private javax.swing.JTextField txtError;
-    private javax.swing.JTextField txtRaiz;
+    private javax.swing.JTextField txtResultado;
     private javax.swing.JTextField txtValor;
     // End of variables declaration//GEN-END:variables
 }

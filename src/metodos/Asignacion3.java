@@ -17,8 +17,8 @@ import javax.swing.table.DefaultTableModel;
 public class Asignacion3 {
 
     int iteracion;
-    double vv,res1,er1;
-    DefaultTableModel model1= new DefaultTableModel(new Object[]{"Iteracion", "Resultado", "Error Aproximado"}, 0);
+    double vv, res1, er1;
+    DefaultTableModel model1 = new DefaultTableModel(new Object[]{"Iteracion", "Resultado", "Error Aproximado"}, 0);
 
     public Asignacion3() {
     }
@@ -34,18 +34,18 @@ public class Asignacion3 {
     public double getEr1() {
         return er1;
     }
-    
+
     public BigInteger factorial(int n) {
         BigInteger res = new BigInteger("1");
         BigInteger it;
         for (int i = n; i > 0; i--) {
-            it= new BigInteger(String.valueOf(i));
+            it = new BigInteger(String.valueOf(i));
             res = res.multiply(it);
         }
         return res;
     }
 
-    public DefaultTableModel metodo1(int cifras, int x){
+    public DefaultTableModel metodo1(int cifras, int x) {
         int i = 0;
         BigDecimal resultado = BigDecimal.ZERO, temp, resultadoAnterior, error;
 
@@ -61,8 +61,8 @@ public class Asignacion3 {
             error = error.multiply(new BigDecimal("100"));
 
             //System.out.println(resultado + "\t" + error);
-            model1.addRow(new Object[]{i,resultado,error});
-            if(error.compareTo(BigDecimal.ZERO)<0){
+            model1.addRow(new Object[]{i, resultado, error});
+            if (error.compareTo(BigDecimal.ZERO) < 0) {
                 error = error.multiply(new BigDecimal(String.valueOf("-1")));
             }
             i++;
@@ -71,6 +71,5 @@ public class Asignacion3 {
         er1 = Double.parseDouble(String.valueOf(error));
         return model1;
     }
-    
 
 }

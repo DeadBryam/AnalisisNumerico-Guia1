@@ -9,7 +9,6 @@ import metodos.Asignacion3;
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 /**
  *
  * @author villa
@@ -19,10 +18,9 @@ public class frmAsignacion3 extends javax.swing.JFrame {
     /**
      * Creates new form frmAsignacion3
      */
-    
     Asignacion3 asig = new Asignacion3();
-    DefaultTableModel model1,model2;
-    
+    DefaultTableModel model1, model2;
+
     public frmAsignacion3() {
         initComponents();
         this.setLocationRelativeTo(null);
@@ -41,10 +39,12 @@ public class frmAsignacion3 extends javax.swing.JFrame {
     private void initComponents() {
 
         pnlTabla = new javax.swing.JPanel();
+        jLabel10 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tabla1 = new javax.swing.JTable();
         jButton3 = new javax.swing.JButton();
-        jPanel1 = new javax.swing.JPanel();
+        jLabel9 = new javax.swing.JLabel();
+        pnlCalculo = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
@@ -70,10 +70,15 @@ public class frmAsignacion3 extends javax.swing.JFrame {
 
         pnlTabla.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jLabel10.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel10.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel10.setText("Valores obtenidos");
+        pnlTabla.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 10, -1, 20));
+
         tabla1.setModel(new DefaultTableModel(new Object[]{"Iteracion", "Resultado", "Error Aproximado"}, 0));
         jScrollPane1.setViewportView(tabla1);
 
-        pnlTabla.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 30, 360, 430));
+        pnlTabla.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 30, 370, 430));
 
         jButton3.setText("X");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
@@ -81,65 +86,68 @@ public class frmAsignacion3 extends javax.swing.JFrame {
                 jButton3ActionPerformed(evt);
             }
         });
-        pnlTabla.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 0, -1, -1));
+        pnlTabla.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 0, -1, -1));
 
-        getContentPane().add(pnlTabla, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, -1, -1));
+        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/back.jpg"))); // NOI18N
+        pnlTabla.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 390, 480));
 
-        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        getContentPane().add(pnlTabla, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 390, 480));
+
+        pnlCalculo.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Ingrese la cifras significativas:");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, -1, 20));
+        pnlCalculo.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, -1, 20));
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("valor verdadero");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 80, -1, 20));
+        pnlCalculo.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 80, -1, 20));
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Valor metodo 1");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 110, -1, 20));
+        pnlCalculo.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 110, -1, 20));
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("Valor metodo 2");
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 140, -1, 20));
+        pnlCalculo.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 140, -1, 20));
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("Error 1");
-        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 190, -1, 20));
+        pnlCalculo.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 190, -1, 20));
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("Error 2");
-        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 220, -1, 20));
+        pnlCalculo.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 220, -1, 20));
 
         jLabel7.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(255, 255, 255));
         jLabel7.setText("Concusion");
-        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 270, -1, 20));
+        pnlCalculo.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 270, -1, 20));
 
         txtValorVerdadero.setEditable(false);
-        jPanel1.add(txtValorVerdadero, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 80, 155, 20));
+        pnlCalculo.add(txtValorVerdadero, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 80, 155, 20));
 
         txtValorMetodo1.setEditable(false);
-        jPanel1.add(txtValorMetodo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 110, 155, 20));
+        pnlCalculo.add(txtValorMetodo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 110, 155, 20));
 
         txtValorMetodo2.setEditable(false);
-        jPanel1.add(txtValorMetodo2, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 140, 155, 20));
+        pnlCalculo.add(txtValorMetodo2, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 140, 155, 20));
 
         txtError1.setEditable(false);
-        jPanel1.add(txtError1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 190, 155, 20));
+        pnlCalculo.add(txtError1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 190, 155, 20));
 
         txtConclusion.setEditable(false);
-        jPanel1.add(txtConclusion, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 270, 260, 20));
+        pnlCalculo.add(txtConclusion, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 270, 260, 20));
 
         txtError2.setEditable(false);
-        jPanel1.add(txtError2, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 220, 155, 20));
-        jPanel1.add(txtCifras, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 20, 51, 20));
+        pnlCalculo.add(txtError2, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 220, 155, 20));
+        pnlCalculo.add(txtCifras, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 20, 51, 20));
 
         btnCalcular.setText("Calcular");
         btnCalcular.addActionListener(new java.awt.event.ActionListener() {
@@ -147,7 +155,7 @@ public class frmAsignacion3 extends javax.swing.JFrame {
                 btnCalcularActionPerformed(evt);
             }
         });
-        jPanel1.add(btnCalcular, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 40, -1, 20));
+        pnlCalculo.add(btnCalcular, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 40, -1, 20));
 
         btnMostrarModel1.setText(">");
         btnMostrarModel1.addActionListener(new java.awt.event.ActionListener() {
@@ -155,7 +163,7 @@ public class frmAsignacion3 extends javax.swing.JFrame {
                 btnMostrarModel1ActionPerformed(evt);
             }
         });
-        jPanel1.add(btnMostrarModel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 110, 40, 20));
+        pnlCalculo.add(btnMostrarModel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 110, 40, 20));
 
         btnMostrarModel2.setText(">");
         btnMostrarModel2.addActionListener(new java.awt.event.ActionListener() {
@@ -163,54 +171,46 @@ public class frmAsignacion3 extends javax.swing.JFrame {
                 btnMostrarModel2ActionPerformed(evt);
             }
         });
-        jPanel1.add(btnMostrarModel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 140, 40, 20));
+        pnlCalculo.add(btnMostrarModel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 140, 40, 20));
 
         jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/back.jpg"))); // NOI18N
-        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(-170, -50, 510, 310));
+        pnlCalculo.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(-170, -50, 570, 540));
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 390, 300));
+        getContentPane().add(pnlCalculo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 390, 480));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnCalcularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCalcularActionPerformed
-       if(txtCifras.getText().isEmpty()){
-           JOptionPane.showMessageDialog(null, "Ingrese la cantidad de cifras.");
-       }else{
-        btnMostrarModel1.setEnabled(true);
-        btnMostrarModel2.setEnabled(true);
-        txtValorVerdadero.setText(String.valueOf(asig.getVv()));
-        model1 = asig.metodo1(Integer.parseInt(txtCifras.getText()),5);
-        txtValorMetodo1.setText(String.valueOf(asig.getRes1()));
-        txtError1.setText(String.valueOf(asig.getEr1()));
-       }
+        if (txtCifras.getText().isEmpty()) {
+            JOptionPane.showMessageDialog(null, "Ingrese la cantidad de cifras.");
+        } else {
+            btnMostrarModel1.setEnabled(true);
+            btnMostrarModel2.setEnabled(true);
+            txtValorVerdadero.setText(String.valueOf(asig.getVv()));
+            model1 = asig.metodo1(Integer.parseInt(txtCifras.getText()), 5);
+            txtValorMetodo1.setText(String.valueOf(asig.getRes1()));
+            txtError1.setText(String.valueOf(asig.getEr1()));
+        }
     }//GEN-LAST:event_btnCalcularActionPerformed
 
     private void btnMostrarModel2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMostrarModel2ActionPerformed
         tabla1.setModel(model2);
         tabla1.sizeColumnsToFit(0);
-        btnCalcular.show(false);
-        btnMostrarModel1.show(false);
-        btnMostrarModel2.show(false);
-        txtCifras.show(false);
+        pnlCalculo.show(false);
         pnlTabla.show(true);
     }//GEN-LAST:event_btnMostrarModel2ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         pnlTabla.show(false);
-        btnCalcular.show(true);
-        btnMostrarModel1.show(true);
-        btnMostrarModel2.show(true);
+        pnlCalculo.show(true);
         txtCifras.show(true);
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void btnMostrarModel1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMostrarModel1ActionPerformed
         tabla1.setModel(model1);
         tabla1.sizeColumnsToFit(0);
-        btnCalcular.show(false);
-        btnMostrarModel1.show(false);
-        btnMostrarModel2.show(false);
-        txtCifras.show(false);
+        pnlCalculo.show(false);
         pnlTabla.show(true);
     }//GEN-LAST:event_btnMostrarModel1ActionPerformed
 
@@ -255,6 +255,7 @@ public class frmAsignacion3 extends javax.swing.JFrame {
     private javax.swing.JButton btnMostrarModel2;
     private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -262,8 +263,9 @@ public class frmAsignacion3 extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
-    private javax.swing.JPanel jPanel1;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JPanel pnlCalculo;
     private javax.swing.JPanel pnlTabla;
     private javax.swing.JTable tabla1;
     private javax.swing.JTextField txtCifras;
