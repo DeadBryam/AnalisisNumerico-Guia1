@@ -115,7 +115,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
 
     private void btnAsignacion3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAsignacion3ActionPerformed
         asignacion3.show(true);
-        this.show(false);
+        this.dispose();
     }//GEN-LAST:event_btnAsignacion3ActionPerformed
 
     /**
