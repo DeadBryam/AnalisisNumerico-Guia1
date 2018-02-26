@@ -25,8 +25,9 @@ public class Asignacion2 {
        modelo.addColumn("Iteracion");
        modelo.addColumn("Resultado");
        modelo.addColumn("Error Aproximado");
-       double nivelTolerancia;
-       nivelTolerancia = (0.5*Math.pow(10, (2-cifras)));
+       float nivelTolerancia;
+       
+       nivelTolerancia = (float) (0.5*(Math.pow(10, (2-cifras))));
        int i=1;
        int exp=2;
        int signo=(-1);
@@ -36,15 +37,15 @@ public class Asignacion2 {
        do {           
            
            vector[0]=i+1;
-           vector[1]=Double.parseDouble(modelo.getValueAt(i-1, 1).toString()) + (Math.pow(x, exp))/(factorial(exp))*(signo);
-           vector[2]=(((Double.parseDouble((vector[1]).toString()))-Double.parseDouble(modelo.getValueAt(i-1, 1).toString()))
-                   /Double.parseDouble((vector[1]).toString()))*100;
+           vector[1]=Float.parseFloat(modelo.getValueAt(i-1, 1).toString()) + (float) (Math.pow(x, exp))/(factorial(exp))*(signo);
+           vector[2]=(((Float.parseFloat((vector[1]).toString()))-Float.parseFloat(modelo.getValueAt(i-1, 1).toString()))
+                   /Float.parseFloat((vector[1]).toString()))*100;
            
            modelo.addRow(vector);
            exp=exp+2;
            signo=signo*(-1);
            i=i+1;
-       } while (Math.abs(Double.parseDouble((vector[2]).toString()))>nivelTolerancia);
+       } while (Math.abs(Float.parseFloat((vector[2]).toString()))>nivelTolerancia);
        
        return modelo;
        

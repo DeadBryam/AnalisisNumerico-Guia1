@@ -109,7 +109,7 @@ public class frmAsignacion2 extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
     
-        jTable1.setModel(asignacion.calcularValor(Math.toRadians(Integer.parseInt(txtValor.getText())), Integer.parseInt(txtCifras.getText())));
+        jTable1.setModel(asignacion.calcularValor(Math.toRadians(Float.parseFloat(txtValor.getText())), Integer.parseInt(txtCifras.getText())));
         jTable1.sizeColumnsToFit(0);
         txtError.setText(jTable1.getValueAt(jTable1.getModel().getRowCount()-1, 2).toString());
         txtRaiz.setText(jTable1.getValueAt(jTable1.getModel().getRowCount()-1, 1).toString());
