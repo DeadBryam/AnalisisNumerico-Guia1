@@ -206,12 +206,19 @@ public class frmAsignacion3 extends javax.swing.JFrame {
             txtValorMetodo1.setText(String.valueOf(asig.getRes1()));
             txtError1.setText(String.valueOf(asig.getEr1()));
             model2 = asig.metodo2(Integer.parseInt(txtCifras.getText()), 5);
-            txtValorMetodo2.setText(String.valueOf(asig.getRes2()));
+            txtValorMetodo2.setText(String.valueOf(1 / asig.getRes2()));
             txtError2.setText(String.valueOf(asig.getEr2()));
+
+            if (Double.parseDouble(String.valueOf(txtError1.getText())) > Double.parseDouble(String.valueOf(txtError2.getText()))) {
+                txtConclusion.setText("EL METODO 2 ES MAS PRECISO.");
+            } else {
+                txtConclusion.setText("EL METODO 1 ES MAS PRECISO.");
+            }
         }
     }//GEN-LAST:event_btnCalcularActionPerformed
 
     private void btnMostrarModel2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMostrarModel2ActionPerformed
+        //tabla1.setModel(new DefaultTableModel());
         tabla1.setModel(model2);
         tabla1.sizeColumnsToFit(0);
         pnlCalculo.show(false);
@@ -225,6 +232,7 @@ public class frmAsignacion3 extends javax.swing.JFrame {
     }//GEN-LAST:event_btnCerrarPanelActionPerformed
 
     private void btnMostrarModel1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMostrarModel1ActionPerformed
+        //tabla1.setModel(new DefaultTableModel());
         tabla1.setModel(model1);
         tabla1.sizeColumnsToFit(0);
         pnlCalculo.show(false);

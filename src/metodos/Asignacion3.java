@@ -18,7 +18,7 @@ public class Asignacion3 {
 
     int iteracion;
     double vv, res1, er1, res2, er2;
-    DefaultTableModel model1 = new DefaultTableModel(new Object[]{"Iteracion", "Resultado", "Error Aproximado"}, 0);
+    DefaultTableModel model1, model2;
 
     public Asignacion3() {
     }
@@ -54,6 +54,7 @@ public class Asignacion3 {
     }
 
     public DefaultTableModel metodo1(int cifras, int x) {
+        model1 = new DefaultTableModel(new Object[]{"Iteracion", "Resultado", "Error Aproximado"}, 0);
         int i = 0;
         BigDecimal resultado = BigDecimal.ZERO, temp, resultadoAnterior, error;
 
@@ -68,8 +69,12 @@ public class Asignacion3 {
             error = error.divide(resultado, 15, RoundingMode.CEILING);
             error = error.multiply(new BigDecimal("100"));
 
-            //System.out.println(resultado + "\t" + error);
-            model1.addRow(new Object[]{i, resultado, error});
+            if (i == 0) {
+                model1.addRow(new Object[]{i + 1, resultado, "-------"});
+            } else {
+                model1.addRow(new Object[]{i + 1, resultado, error});
+            }
+
             if (error.compareTo(BigDecimal.ZERO) < 0) {
                 error = error.multiply(new BigDecimal(String.valueOf("-1")));
             }
@@ -79,14 +84,15 @@ public class Asignacion3 {
         er1 = Double.parseDouble(String.valueOf(error));
         return model1;
     }
-    
+
     public DefaultTableModel metodo2(int cifras, int x) {
+        model2 = new DefaultTableModel(new Object[]{"Iteracion", "Resultado", "Error Aproximado"}, 0);
         int i = 0;
         BigDecimal resultado = BigDecimal.ZERO, temp, resultadoAnterior, error;
 
         do {
             resultadoAnterior = resultado;
-            temp = new BigDecimal(String.valueOf(Math.pow((-x), i)));
+            temp = new BigDecimal(String.valueOf(Math.pow((x), i)));
             temp = temp.divide(new BigDecimal(factorial(i)), 15, RoundingMode.CEILING);
             resultado = resultado.add(temp);
 
@@ -95,8 +101,12 @@ public class Asignacion3 {
             error = error.divide(resultado, 15, RoundingMode.CEILING);
             error = error.multiply(new BigDecimal("100"));
 
-            //System.out.println(resultado + "\t" + error);
-            model1.addRow(new Object[]{i, resultado, error});
+            if (i == 0) {
+                model2.addRow(new Object[]{i + 1, BigDecimal.ONE.divide(resultado, 10, RoundingMode.CEILING), "-------"});
+            } else {
+                model2.addRow(new Object[]{i + 1, BigDecimal.ONE.divide(resultado, 10, RoundingMode.CEILING), error});
+            }
+
             if (error.compareTo(BigDecimal.ZERO) < 0) {
                 error = error.multiply(new BigDecimal(String.valueOf("-1")));
             }
@@ -104,7 +114,7 @@ public class Asignacion3 {
         } while (error.compareTo(new BigDecimal(String.valueOf(0.5 * Math.pow(10, (2 - cifras))))) > 0);
         res2 = Double.parseDouble(String.valueOf(resultado));
         er2 = Double.parseDouble(String.valueOf(error));
-        return model1;
+        return model2;
     }
 
 }
