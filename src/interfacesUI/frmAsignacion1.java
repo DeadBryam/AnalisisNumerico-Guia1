@@ -77,7 +77,7 @@ public class frmAsignacion1 extends javax.swing.JFrame {
                 btnRegresarActionPerformed(evt);
             }
         });
-        jPanel1.add(btnRegresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 0, 50, -1));
+        jPanel1.add(btnRegresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 0, 50, -1));
 
         txtA.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         txtA.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -85,7 +85,7 @@ public class frmAsignacion1 extends javax.swing.JFrame {
                 txtAKeyTyped(evt);
             }
         });
-        jPanel1.add(txtA, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 30, 80, 20));
+        jPanel1.add(txtA, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 30, 80, 20));
 
         txtB.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         txtB.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -93,7 +93,7 @@ public class frmAsignacion1 extends javax.swing.JFrame {
                 txtBKeyTyped(evt);
             }
         });
-        jPanel1.add(txtB, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 30, 80, 20));
+        jPanel1.add(txtB, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 30, 80, 20));
 
         txtC.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         txtC.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -101,22 +101,22 @@ public class frmAsignacion1 extends javax.swing.JFrame {
                 txtCKeyTyped(evt);
             }
         });
-        jPanel1.add(txtC, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 30, 80, 20));
+        jPanel1.add(txtC, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 30, 80, 20));
 
         jLabel1.setFont(new java.awt.Font("Calibri", 1, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("x  +");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 30, -1, 20));
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 30, -1, 20));
 
         jLabel2.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("2");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 20, 10, -1));
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 20, 10, -1));
 
         jLabel3.setFont(new java.awt.Font("Calibri", 1, 24)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("x  +");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 30, 40, 20));
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 30, 40, 20));
 
         btnCalcular.setText("Calcular");
         btnCalcular.addActionListener(new java.awt.event.ActionListener() {
@@ -139,12 +139,12 @@ public class frmAsignacion1 extends javax.swing.JFrame {
         jLabel6.setFont(new java.awt.Font("Calibri", 1, 18)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("x2=");
-        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 250, 30, 20));
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 250, 30, 20));
 
         jLabel7.setFont(new java.awt.Font("Calibri", 1, 18)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(255, 255, 255));
         jLabel7.setText("x1=");
-        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 220, 30, 20));
+        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 220, 30, 20));
 
         jLabel8.setFont(new java.awt.Font("Calibri", 1, 18)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(255, 255, 255));
@@ -154,13 +154,15 @@ public class frmAsignacion1 extends javax.swing.JFrame {
         jLabel10.setFont(new java.awt.Font("Calibri", 1, 18)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(255, 255, 255));
         jLabel10.setText("Número de cifras para redondeo:");
-        jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 80, -1, 20));
-        jPanel1.add(txtCifras, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 80, 50, 20));
+        jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 80, -1, 20));
+
+        txtCifras.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jPanel1.add(txtCifras, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 80, 50, 20));
 
         jLabel11.setFont(new java.awt.Font("Calibri", 1, 18)); // NOI18N
         jLabel11.setForeground(new java.awt.Color(255, 255, 255));
         jLabel11.setText("Valor real:");
-        jPanel1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 189, -1, -1));
+        jPanel1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 190, -1, -1));
 
         jLabel12.setFont(new java.awt.Font("Calibri", 1, 18)); // NOI18N
         jLabel12.setForeground(new java.awt.Color(255, 255, 255));
@@ -169,27 +171,27 @@ public class frmAsignacion1 extends javax.swing.JFrame {
 
         txtX1.setEditable(false);
         txtX1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jPanel1.add(txtX1, new org.netbeans.lib.awtextra.AbsoluteConstraints(62, 220, 106, 20));
+        jPanel1.add(txtX1, new org.netbeans.lib.awtextra.AbsoluteConstraints(62, 220, 180, 20));
 
         txtX2.setEditable(false);
         txtX2.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jPanel1.add(txtX2, new org.netbeans.lib.awtextra.AbsoluteConstraints(62, 250, 106, 20));
+        jPanel1.add(txtX2, new org.netbeans.lib.awtextra.AbsoluteConstraints(62, 250, 180, 20));
 
         txtX3.setEditable(false);
         txtX3.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jPanel1.add(txtX3, new org.netbeans.lib.awtextra.AbsoluteConstraints(267, 220, 179, 20));
+        jPanel1.add(txtX3, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 220, 180, 20));
 
         txtX4.setEditable(false);
         txtX4.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jPanel1.add(txtX4, new org.netbeans.lib.awtextra.AbsoluteConstraints(267, 250, 179, 20));
+        jPanel1.add(txtX4, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 250, 180, 20));
 
         txtErrorX1.setEditable(false);
         txtErrorX1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jPanel1.add(txtErrorX1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 330, 176, 20));
+        jPanel1.add(txtErrorX1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 330, 180, 20));
 
         txtErrorX2.setEditable(false);
         txtErrorX2.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jPanel1.add(txtErrorX2, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 360, 176, 20));
+        jPanel1.add(txtErrorX2, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 360, 180, 20));
 
         jLabel9.setFont(new java.awt.Font("Calibri", 1, 18)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(255, 255, 255));
@@ -204,9 +206,9 @@ public class frmAsignacion1 extends javax.swing.JFrame {
         Fondo.setFont(new java.awt.Font("Calibri", 1, 18)); // NOI18N
         Fondo.setForeground(new java.awt.Color(255, 255, 255));
         Fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/back.jpg"))); // NOI18N
-        jPanel1.add(Fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(-140, -120, 620, 540));
+        jPanel1.add(Fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(-140, -120, 630, 540));
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 470, 410));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 490, 410));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

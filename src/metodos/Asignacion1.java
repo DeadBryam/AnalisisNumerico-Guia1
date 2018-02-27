@@ -18,52 +18,50 @@ public class Asignacion1 {
 
     public double calcularX1(double a, double b, double c, int cifras) {
         a = redondearNumero(a, cifras);
-        System.out.println(a);
         b = redondearNumero(b, cifras);
-        System.out.println(b);
         c = redondearNumero(c, cifras);
-        System.out.println(c);
 
-        x1 = (2 * c) / ((-b) + redondearNumero(Math.sqrt(redondearNumero((b * b), cifras) - redondearNumero((4 * a * c), cifras)), cifras));
-        return redondearNumero(x1, cifras);
+        x1 = (2 * c) / redondearNumero(((-b) + redondearNumero(Math.sqrt(redondearNumero((b * b), cifras) - redondearNumero((4 * a * c), cifras)), cifras)), cifras);
+        System.out.println((2 * c) / redondearNumero(((-b) + redondearNumero(Math.sqrt(redondearNumero((b * b), cifras) - redondearNumero((4 * a * c), cifras)), cifras)), cifras));
+        return x1;
 
     }
 
-    public double redondearNumero(double numD, int cifras) {
-        String numS, entero = "";
-        int i = cifras;
-        double parteEntera = 0.0;
-        boolean positivo = true;
+    public double redondearNumero(double numero, int cifras) {
+        boolean positivo = false;
+        double parteEntera = 0, aux;
+        int i = 0;
 
-        if (numD > 0.0) {
-            parteEntera = Math.floor(numD);
-            numD = numD - parteEntera;
+        if (numero > 0.0) {
+            parteEntera = Math.floor(numero);
+            numero -= parteEntera;
             positivo = true;
-        } else if (numD < 0.0) {
-            numD = numD * -1;
-            parteEntera = Math.floor(numD);
-            numD = numD - parteEntera;
+        } else if (numero < 0.0) {
+            numero *= -1;
+            parteEntera = Math.floor(numero);
+            numero -= parteEntera;
             positivo = false;
         }
 
-        if (numD == 0.0 && positivo) {
+        if (numero == 0.0 && positivo) {
             return parteEntera;
-        } else if (numD == 0.0) {
+        } else if (numero == 0.0) {
             return parteEntera * -1;
         }
-        
-        do {
-            entero = String.format("%." + i + "f", numD);
-            entero = entero.replaceAll(",", ".");
-            i++;
-        } while (Double.parseDouble(entero) == 0.0);
 
-        numS = entero;
+        do {
+            aux = numero * Math.pow(10, cifras + i);
+            i++;
+        } while (Math.floor(aux) == 0);
+        i--;
+        numero *= Math.pow(10, cifras + i);
+        numero = Math.round(numero);
+        numero /= Math.pow(10, cifras + i);
 
         if (positivo == true) {
-            return Double.parseDouble(numS) + parteEntera;
+            return numero + parteEntera;
         } else {
-            return (Double.parseDouble(numS) + parteEntera) * -1;
+            return (numero + parteEntera) * -1;
         }
     }
 
@@ -73,18 +71,15 @@ public class Asignacion1 {
         c = redondearNumero(c, cifras);
 
         x1 = (2 * c) / ((-b) - redondearNumero(Math.sqrt(redondearNumero((b * b), cifras) - redondearNumero((4 * a * c), cifras)), cifras));
-        return redondearNumero(x1, cifras);
-
+        return x1;
     }
 
     public double valorRealX1(double a, double b, double c) {
-
         return x1 = (2 * c) / ((-b) + Math.sqrt((b * b) - 4 * a * c));
     }
 
     public double valorRealX2(double a, double b, double c) {
-
         return x1 = (2 * c) / ((-b) - Math.sqrt((b * b) - 4 * a * c));
     }
-    
+
 }
