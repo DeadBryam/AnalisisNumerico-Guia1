@@ -212,16 +212,34 @@ public class frmAsignacion1 extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnCalcularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCalcularActionPerformed
-        if (txtA.getText().isEmpty() || txtB.getText().isEmpty() || txtC.getText().isEmpty() || txtCifras.getText().isEmpty()) {
+        if (txtC.getText().isEmpty() || txtCifras.getText().isEmpty()) {
             JOptionPane.showMessageDialog(null, "Falta ingresar datos.");
-        } else if ((Double.parseDouble(txtB.getText()) * Double.parseDouble(txtB.getText())) - (4 * Double.parseDouble(txtA.getText()) * Double.parseDouble(txtC.getText())) < 0.0) {
-            JOptionPane.showMessageDialog(null, "Tiene raices complejas.");
         } else {
-            txtX1.setText(String.valueOf(asignacion.calcularX1(Double.parseDouble(txtA.getText()), Double.parseDouble(txtB.getText()), Double.parseDouble(txtC.getText()), Integer.parseInt(txtCifras.getText()))));
-            txtX2.setText(String.valueOf(asignacion.calcularX2(Double.parseDouble(txtA.getText()), Double.parseDouble(txtB.getText()), Double.parseDouble(txtC.getText()), Integer.parseInt(txtCifras.getText()))));
-            txtX3.setText(String.valueOf(asignacion.valorRealX1(Double.parseDouble(txtA.getText()), Double.parseDouble(txtB.getText()), Double.parseDouble(txtC.getText()))));
-            txtX4.setText(String.valueOf(asignacion.valorRealX2(Double.parseDouble(txtA.getText()), Double.parseDouble(txtB.getText()), Double.parseDouble(txtC.getText()))));
-            calcularError();
+            if (txtA.getText().isEmpty()) {
+                txtA.setText("1");
+            }
+            if (txtA.getText().equals("-")) {
+                txtA.setText("-1");
+            }
+            if (txtB.getText().isEmpty()) {
+                txtB.setText("1");
+            }
+            if (txtB.getText().equals("-")) {
+                txtB.setText("-1");
+            }
+            if ((Double.parseDouble(txtB.getText()) * Double.parseDouble(txtB.getText())) - (4 * Double.parseDouble(txtA.getText()) * Double.parseDouble(txtC.getText())) < 0.0) {
+                JOptionPane.showMessageDialog(null, "Tiene raices complejas.");
+            } else {
+                try {
+                    txtX1.setText(String.valueOf(asignacion.calcularX1(Double.parseDouble(txtA.getText()), Double.parseDouble(txtB.getText()), Double.parseDouble(txtC.getText()), Integer.parseInt(txtCifras.getText()))));
+                    txtX2.setText(String.valueOf(asignacion.calcularX2(Double.parseDouble(txtA.getText()), Double.parseDouble(txtB.getText()), Double.parseDouble(txtC.getText()), Integer.parseInt(txtCifras.getText()))));
+                    txtX3.setText(String.valueOf(asignacion.valorRealX1(Double.parseDouble(txtA.getText()), Double.parseDouble(txtB.getText()), Double.parseDouble(txtC.getText()))));
+                    txtX4.setText(String.valueOf(asignacion.valorRealX2(Double.parseDouble(txtA.getText()), Double.parseDouble(txtB.getText()), Double.parseDouble(txtC.getText()))));
+                    calcularError();
+                } catch (Exception e) {
+                    JOptionPane.showMessageDialog(null, "Ingrese solo datos validos.");
+                }
+            }
         }
     }//GEN-LAST:event_btnCalcularActionPerformed
 

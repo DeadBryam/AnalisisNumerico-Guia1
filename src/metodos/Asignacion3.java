@@ -92,9 +92,12 @@ public class Asignacion3 {
 
         do {
             resultadoAnterior = resultado;
+            if(i!=0){
+            resultado = BigDecimal.ONE.divide(resultado,10,RoundingMode.CEILING);
+            }
             temp = new BigDecimal(String.valueOf(Math.pow((x), i)));
             temp = temp.divide(new BigDecimal(factorial(i)), 15, RoundingMode.CEILING);
-            resultado = resultado.add(temp);
+            resultado = BigDecimal.ONE.divide(resultado.add(temp),10,RoundingMode.CEILING);
 
             error = resultado;
             error = error.subtract(resultadoAnterior);
@@ -102,9 +105,10 @@ public class Asignacion3 {
             error = error.multiply(new BigDecimal("100"));
 
             if (i == 0) {
-                model2.addRow(new Object[]{i + 1, BigDecimal.ONE.divide(resultado, 10, RoundingMode.CEILING), "-------"});
+                model2.addRow(new Object[]{i + 1, resultado, "-------"});
             } else {
-                model2.addRow(new Object[]{i + 1, BigDecimal.ONE.divide(resultado, 10, RoundingMode.CEILING), error});
+                model2.addRow(new Object[]{i + 1, resultado, error});
+                //model2.addRow(new Object[]{i + 1, BigDecimal.ONE.divide(resultado, 10, RoundingMode.CEILING), error});
             }
 
             if (error.compareTo(BigDecimal.ZERO) < 0) {
@@ -112,7 +116,7 @@ public class Asignacion3 {
             }
             i++;
         } while (error.compareTo(new BigDecimal(String.valueOf(0.5 * Math.pow(10, (2 - cifras))))) > 0);
-        res2 = Double.parseDouble(String.valueOf(resultado));
+        res2 = Double.parseDouble(String.valueOf(BigDecimal.ONE.divide(resultado,10,RoundingMode.CEILING)));
         er2 = Double.parseDouble(String.valueOf(error));
         return model2;
     }
