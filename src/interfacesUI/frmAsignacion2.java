@@ -50,6 +50,7 @@ public class frmAsignacion2 extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
         txtValor = new javax.swing.JTextField();
+        cmbxUnidades = new javax.swing.JComboBox<>();
         jLabel4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -72,13 +73,13 @@ public class frmAsignacion2 extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Ingrese el valor de x:");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 50, -1, 20));
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 50, -1, 20));
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("Ingrese la cantidad de cirfras significativas:");
-        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, -1, 20));
-        jPanel1.add(txtCifras, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 20, 60, 20));
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, -1, 20));
+        jPanel1.add(txtCifras, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 20, 60, 20));
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
@@ -102,7 +103,7 @@ public class frmAsignacion2 extends javax.swing.JFrame {
                 btnCalcularActionPerformed(evt);
             }
         });
-        jPanel1.add(btnCalcular, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 50, -1, -1));
+        jPanel1.add(btnCalcular, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 80, 110, -1));
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -120,6 +121,9 @@ public class frmAsignacion2 extends javax.swing.JFrame {
         jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 177, 510, 280));
         jPanel1.add(txtValor, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 50, 60, 20));
 
+        cmbxUnidades.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Elija Unidad", "Grados", "Radianes" }));
+        jPanel1.add(cmbxUnidades, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 50, -1, -1));
+
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/back.jpg"))); // NOI18N
         jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(-30, 0, 620, 510));
 
@@ -129,10 +133,15 @@ public class frmAsignacion2 extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnCalcularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCalcularActionPerformed
-        if (txtCifras.getText().isEmpty() || txtValor.getText().isEmpty()) {
+        if (txtCifras.getText().isEmpty() || txtValor.getText().isEmpty() || cmbxUnidades.getSelectedIndex() == 0) {
             JOptionPane.showMessageDialog(null, "Falta ingresar datos.");
         } else {
-            jTable1.setModel(asignacion.calcularValor(Math.toRadians(Float.parseFloat(txtValor.getText())), Integer.parseInt(txtCifras.getText())));
+            if(cmbxUnidades.getSelectedIndex()==1){
+            jTable1.setModel(asignacion.calcularValor(Math.toRadians(Float.parseFloat(txtValor.getText())), Integer.parseInt(txtCifras.getText())));    
+            }else{
+                jTable1.setModel(asignacion.calcularValor((Float.parseFloat(txtValor.getText())), Integer.parseInt(txtCifras.getText())));
+            }
+            
             jTable1.sizeColumnsToFit(0);
             txtError.setText(jTable1.getValueAt(jTable1.getModel().getRowCount() - 1, 2).toString());
             txtResultado.setText(jTable1.getValueAt(jTable1.getModel().getRowCount() - 1, 1).toString());
@@ -184,6 +193,7 @@ public class frmAsignacion2 extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCalcular;
     private javax.swing.JButton btnRegresar;
+    private javax.swing.JComboBox<String> cmbxUnidades;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

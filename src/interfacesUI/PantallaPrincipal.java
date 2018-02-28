@@ -55,7 +55,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
                 btnAsignacion1ActionPerformed(evt);
             }
         });
-        jPanel1.add(btnAsignacion1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 180, 110, 25));
+        jPanel1.add(btnAsignacion1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 180, 140, 25));
 
         btnAsignacion2.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         btnAsignacion2.setText("Asignacion 2");
@@ -64,7 +64,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
                 btnAsignacion2ActionPerformed(evt);
             }
         });
-        jPanel1.add(btnAsignacion2, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 220, 110, 25));
+        jPanel1.add(btnAsignacion2, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 220, 140, 25));
 
         btnAsignacion3.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         btnAsignacion3.setText("Asignacion 3");
@@ -73,32 +73,32 @@ public class PantallaPrincipal extends javax.swing.JFrame {
                 btnAsignacion3ActionPerformed(evt);
             }
         });
-        jPanel1.add(btnAsignacion3, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 260, 110, 25));
+        jPanel1.add(btnAsignacion3, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 260, 140, 25));
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Análisis numérico 2018");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, 360, 22));
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 40, 360, 22));
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Villafuerte Mangandí Bryan Villafuerte");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 87, 360, 22));
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 90, 430, 22));
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Primera tarea de programación");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 53, 360, 22));
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 60, 360, 22));
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("Doratt Herrera Luis Enrique");
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 120, 360, 22));
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 120, 360, 22));
 
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/back.jpg"))); // NOI18N
-        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(-140, -70, 600, 440));
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(-140, -70, 680, 480));
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 370, 320));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 530, 410));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

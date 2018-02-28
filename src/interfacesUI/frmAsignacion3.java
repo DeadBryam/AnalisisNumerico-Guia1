@@ -120,13 +120,13 @@ public class frmAsignacion3 extends javax.swing.JFrame {
         pnlCalculo.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 290, -1, 20));
 
         txtValorVerdadero.setEditable(false);
-        pnlCalculo.add(txtValorVerdadero, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 90, 155, 20));
+        pnlCalculo.add(txtValorVerdadero, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 90, 155, 20));
 
         txtValorMetodo1.setEditable(false);
-        pnlCalculo.add(txtValorMetodo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 120, 155, 20));
+        pnlCalculo.add(txtValorMetodo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 120, 155, 20));
 
         txtValorMetodo2.setEditable(false);
-        pnlCalculo.add(txtValorMetodo2, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 150, 155, 20));
+        pnlCalculo.add(txtValorMetodo2, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 150, 155, 20));
 
         txtError1.setEditable(false);
         pnlCalculo.add(txtError1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 210, 155, 20));
@@ -136,7 +136,7 @@ public class frmAsignacion3 extends javax.swing.JFrame {
 
         txtError2.setEditable(false);
         pnlCalculo.add(txtError2, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 240, 155, 20));
-        pnlCalculo.add(txtCifras, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 20, 51, 20));
+        pnlCalculo.add(txtCifras, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 20, 51, 20));
 
         btnCalcular.setText("Calcular");
         btnCalcular.addActionListener(new java.awt.event.ActionListener() {
@@ -144,7 +144,7 @@ public class frmAsignacion3 extends javax.swing.JFrame {
                 btnCalcularActionPerformed(evt);
             }
         });
-        pnlCalculo.add(btnCalcular, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 50, -1, 20));
+        pnlCalculo.add(btnCalcular, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 50, -1, 20));
 
         btnMostrarModel1.setText(">");
         btnMostrarModel1.addActionListener(new java.awt.event.ActionListener() {
@@ -152,7 +152,7 @@ public class frmAsignacion3 extends javax.swing.JFrame {
                 btnMostrarModel1ActionPerformed(evt);
             }
         });
-        pnlCalculo.add(btnMostrarModel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 120, 40, 20));
+        pnlCalculo.add(btnMostrarModel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 120, 40, 20));
 
         btnMostrarModel2.setText(">");
         btnMostrarModel2.addActionListener(new java.awt.event.ActionListener() {
@@ -160,7 +160,7 @@ public class frmAsignacion3 extends javax.swing.JFrame {
                 btnMostrarModel2ActionPerformed(evt);
             }
         });
-        pnlCalculo.add(btnMostrarModel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 150, 40, 20));
+        pnlCalculo.add(btnMostrarModel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 150, 40, 20));
 
         jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/back.jpg"))); // NOI18N
         pnlCalculo.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(-170, -50, 570, 540));

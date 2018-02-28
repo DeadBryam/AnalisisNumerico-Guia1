@@ -27,20 +27,21 @@ public class Asignacion2 {
         return err;
     }
 
-    public DefaultTableModel calcularValor (double x, int cifras) {
+    public DefaultTableModel calcularValor(double x, int cifras) {
         modelo = new DefaultTableModel(new Object[]{"Iteracion", "Resultado", "Error Aproximado"}, 0);
+        
         int i = 0;
         BigDecimal resultado = BigDecimal.ZERO, temp, resultadoAnterior, error;
 
         do {
             resultadoAnterior = resultado;
-            temp = new BigDecimal(String.valueOf((Math.pow((x), i*2))*(Math.pow(-1, i))));
-            temp = temp.divide(new BigDecimal(factorial(i*2)), 15, RoundingMode.CEILING);
+            temp = new BigDecimal(String.valueOf((Math.pow((x), i * 2)) * (Math.pow(-1, i))));
+            temp = temp.divide(new BigDecimal(factorial(i * 2)), 30, RoundingMode.CEILING);
             resultado = resultado.add(temp);
 
             error = resultado;
             error = error.subtract(resultadoAnterior);
-            error = error.divide(resultado, 15, RoundingMode.CEILING);
+            error = error.divide(resultado, 30, RoundingMode.CEILING);
             error = error.multiply(new BigDecimal("100"));
 
             if (i == 0) {
@@ -58,7 +59,7 @@ public class Asignacion2 {
         err = Double.parseDouble(String.valueOf(error));
         return modelo;
     }
-    
+
     public BigInteger factorial(int n) {
         BigInteger resultado = new BigInteger("1");
         BigInteger it;
