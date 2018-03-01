@@ -22,7 +22,6 @@ public class Asignacion1 {
         c = redondearNumero(c, cifras);
 
         x1 = (2 * c) / redondearNumero(((-b) + redondearNumero(Math.sqrt(redondearNumero((b * b), cifras) - redondearNumero((4 * a * c), cifras)), cifras)), cifras);
-        System.out.println((2 * c) / redondearNumero(((-b) + redondearNumero(Math.sqrt(redondearNumero((b * b), cifras) - redondearNumero((4 * a * c), cifras)), cifras)), cifras));
         return x1;
 
     }

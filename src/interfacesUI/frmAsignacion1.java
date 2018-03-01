@@ -255,31 +255,27 @@ public class frmAsignacion1 extends javax.swing.JFrame {
     }
 
     private void txtAKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtAKeyTyped
-        char caracter = evt.getKeyChar();
-        if (((caracter < '0') || (caracter > '9'))
-                && (caracter != KeyEvent.VK_BACKSPACE) && (caracter!='-')
-                && (caracter != '.' || txtA.getText().contains(".")) && caracter != KeyEvent.VK_ENTER) {
-            evt.consume();
-        
-        }
+        validar(evt, txtA);
     }//GEN-LAST:event_txtAKeyTyped
 
-    private void txtBKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtBKeyTyped
+    private void validar(java.awt.event.KeyEvent evt, javax.swing.JTextField txt){
         char caracter = evt.getKeyChar();
-        if (((caracter < '0') || (caracter > '9'))
-                && (caracter != KeyEvent.VK_BACKSPACE) && (caracter!='-')
-                && (caracter != '.' || txtB.getText().contains(".")) && caracter != KeyEvent.VK_ENTER) {
+        if(!txt.getText().isEmpty() && caracter == '-'){
             evt.consume();
         }
+        if (((caracter < '0') || (caracter > '9'))
+                && (caracter != KeyEvent.VK_BACKSPACE) && (caracter != '-')
+                && (caracter != '.' || txt.getText().contains(".")) && caracter != KeyEvent.VK_ENTER) {
+            evt.consume();
+        }
+    }
+    
+    private void txtBKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtBKeyTyped
+        validar(evt, txtB);
     }//GEN-LAST:event_txtBKeyTyped
 
     private void txtCKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCKeyTyped
-       char caracter = evt.getKeyChar();
-        if (((caracter < '0') || (caracter > '9'))
-                && (caracter != KeyEvent.VK_BACKSPACE) && (caracter!='-')
-                && (caracter != '.' || txtC.getText().contains(".")) && caracter != KeyEvent.VK_ENTER) {
-            evt.consume();
-        }
+        validar(evt, txtC);
     }//GEN-LAST:event_txtCKeyTyped
 
     private void btnRegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegresarActionPerformed
