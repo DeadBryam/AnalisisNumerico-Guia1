@@ -64,13 +64,15 @@ public class frmAsignacion1 extends javax.swing.JFrame {
         Fondo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         btnRegresar.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         btnRegresar.setForeground(new java.awt.Color(255, 255, 255));
-        btnRegresar.setText("X");
+        btnRegresar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/flecha-de-retroceso.png"))); // NOI18N
+        btnRegresar.setToolTipText("Regresar");
         btnRegresar.setBorderPainted(false);
         btnRegresar.setContentAreaFilled(false);
         btnRegresar.addActionListener(new java.awt.event.ActionListener() {
@@ -78,7 +80,7 @@ public class frmAsignacion1 extends javax.swing.JFrame {
                 btnRegresarActionPerformed(evt);
             }
         });
-        jPanel1.add(btnRegresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 0, 50, -1));
+        jPanel1.add(btnRegresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 0, 30, 30));
 
         txtA.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         txtA.addKeyListener(new java.awt.event.KeyAdapter() {

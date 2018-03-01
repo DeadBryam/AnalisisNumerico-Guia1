@@ -74,15 +74,17 @@ public class frmAsignacion3 extends javax.swing.JFrame {
 
         btnRegresar.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         btnRegresar.setForeground(new java.awt.Color(255, 255, 255));
-        btnRegresar.setText("X");
+        btnRegresar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/flecha-de-retroceso.png"))); // NOI18N
+        btnRegresar.setToolTipText("Regresar");
         btnRegresar.setBorderPainted(false);
         btnRegresar.setContentAreaFilled(false);
+        btnRegresar.setLabel("");
         btnRegresar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnRegresarActionPerformed(evt);
             }
         });
-        pnlCalculo.add(btnRegresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 0, 50, -1));
+        pnlCalculo.add(btnRegresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 0, 30, 30));
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));

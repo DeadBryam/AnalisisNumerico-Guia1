@@ -55,7 +55,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
                 btnAsignacion1ActionPerformed(evt);
             }
         });
-        jPanel1.add(btnAsignacion1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 180, 140, 25));
+        jPanel1.add(btnAsignacion1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 180, 140, 25));
 
         btnAsignacion2.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         btnAsignacion2.setText("Asignacion 2");
@@ -64,7 +64,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
                 btnAsignacion2ActionPerformed(evt);
             }
         });
-        jPanel1.add(btnAsignacion2, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 220, 140, 25));
+        jPanel1.add(btnAsignacion2, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 220, 140, 25));
 
         btnAsignacion3.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         btnAsignacion3.setText("Asignacion 3");
@@ -73,7 +73,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
                 btnAsignacion3ActionPerformed(evt);
             }
         });
-        jPanel1.add(btnAsignacion3, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 260, 140, 25));
+        jPanel1.add(btnAsignacion3, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 260, 140, 25));
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
@@ -96,9 +96,9 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 120, 360, 22));
 
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/back.jpg"))); // NOI18N
-        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(-140, -70, 680, 480));
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(-140, -70, 610, 480));
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 530, 410));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 470, 410));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
