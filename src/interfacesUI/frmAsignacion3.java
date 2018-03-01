@@ -58,6 +58,7 @@ public class frmAsignacion3 extends javax.swing.JFrame {
         btnCalcular = new javax.swing.JButton();
         btnMostrarModel1 = new javax.swing.JButton();
         btnMostrarModel2 = new javax.swing.JButton();
+        jLabel11 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         pnlTabla = new javax.swing.JPanel();
         jLabel10 = new javax.swing.JLabel();
@@ -164,6 +165,9 @@ public class frmAsignacion3 extends javax.swing.JFrame {
         });
         pnlCalculo.add(btnMostrarModel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 150, 40, 20));
 
+        jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/serie1.png"))); // NOI18N
+        pnlCalculo.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 350, 260, 80));
+
         jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/back.jpg"))); // NOI18N
         pnlCalculo.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(-170, -50, 570, 540));
 
@@ -181,13 +185,15 @@ public class frmAsignacion3 extends javax.swing.JFrame {
 
         pnlTabla.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 30, 370, 430));
 
-        btnCerrarPanel.setText("X");
+        btnCerrarPanel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/flecha-de-retroceso.png"))); // NOI18N
+        btnCerrarPanel.setBorderPainted(false);
+        btnCerrarPanel.setContentAreaFilled(false);
         btnCerrarPanel.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnCerrarPanelActionPerformed(evt);
             }
         });
-        pnlTabla.add(btnCerrarPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 0, -1, -1));
+        pnlTabla.add(btnCerrarPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 0, 30, 30));
 
         jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/back.jpg"))); // NOI18N
         pnlTabla.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 390, 480));
@@ -290,6 +296,7 @@ public class frmAsignacion3 extends javax.swing.JFrame {
     private javax.swing.JButton btnRegresar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
