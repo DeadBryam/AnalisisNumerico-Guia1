@@ -141,7 +141,7 @@ public class frmAsignacion2 extends javax.swing.JFrame {
             
             jTable1.setModel(asignacion.calcularValor(Math.toRadians(Float.parseFloat(txtValor.getText())), Integer.parseInt(txtCifras.getText())));    
             jTable1.sizeColumnsToFit(0);
-            txtError.setText(jTable1.getValueAt(jTable1.getModel().getRowCount() - 1, 2).toString());
+            txtError.setText(String.valueOf((Math.abs(Double.parseDouble(jTable1.getValueAt(jTable1.getModel().getRowCount() - 1, 2).toString())))));
             txtResultado.setText(jTable1.getValueAt(jTable1.getModel().getRowCount() - 1, 1).toString());
         }
     }//GEN-LAST:event_btnCalcularActionPerformed

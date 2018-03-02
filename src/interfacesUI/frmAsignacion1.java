@@ -61,6 +61,8 @@ public class frmAsignacion1 extends javax.swing.JFrame {
         txtErrorX2 = new javax.swing.JTextField();
         jLabel9 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
+        jLabel14 = new javax.swing.JLabel();
+        jLabel15 = new javax.swing.JLabel();
         Fondo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -203,13 +205,23 @@ public class frmAsignacion1 extends javax.swing.JFrame {
 
         jLabel13.setFont(new java.awt.Font("Calibri", 1, 18)); // NOI18N
         jLabel13.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel13.setText("x1=");
-        jPanel1.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 330, 40, 20));
+        jLabel13.setText("%");
+        jPanel1.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 360, 40, 20));
+
+        jLabel14.setFont(new java.awt.Font("Calibri", 1, 18)); // NOI18N
+        jLabel14.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel14.setText("x1=");
+        jPanel1.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 330, 40, 20));
+
+        jLabel15.setFont(new java.awt.Font("Calibri", 1, 18)); // NOI18N
+        jLabel15.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel15.setText("%");
+        jPanel1.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 330, 40, 20));
 
         Fondo.setFont(new java.awt.Font("Calibri", 1, 18)); // NOI18N
         Fondo.setForeground(new java.awt.Color(255, 255, 255));
         Fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/back.jpg"))); // NOI18N
-        jPanel1.add(Fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(-130, -110, 680, 570));
+        jPanel1.add(Fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(-120, -100, 680, 570));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 550, 450));
 
@@ -251,9 +263,9 @@ public class frmAsignacion1 extends javax.swing.JFrame {
     public void calcularError() {
         double Error;
         Error = ((Double.parseDouble(txtX3.getText()) - Double.parseDouble(txtX1.getText())) / Double.parseDouble(txtX3.getText())) * 100;
-        txtErrorX1.setText(String.valueOf(Error));
+        txtErrorX1.setText(String.valueOf(Math.abs(Error)));
         Error = ((Double.parseDouble(txtX4.getText()) - Double.parseDouble(txtX2.getText())) / Double.parseDouble(txtX4.getText())) * 100;
-        txtErrorX2.setText(String.valueOf(Error));
+        txtErrorX2.setText(String.valueOf(Math.abs(Error)));
     }
 
     private void txtAKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtAKeyTyped
@@ -331,6 +343,8 @@ public class frmAsignacion1 extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
