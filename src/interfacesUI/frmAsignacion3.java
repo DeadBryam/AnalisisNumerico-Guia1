@@ -58,7 +58,9 @@ public class frmAsignacion3 extends javax.swing.JFrame {
         btnCalcular = new javax.swing.JButton();
         btnMostrarModel1 = new javax.swing.JButton();
         btnMostrarModel2 = new javax.swing.JButton();
+        jLabel13 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         pnlTabla = new javax.swing.JPanel();
         jLabel10 = new javax.swing.JLabel();
@@ -79,7 +81,6 @@ public class frmAsignacion3 extends javax.swing.JFrame {
         btnRegresar.setToolTipText("Regresar");
         btnRegresar.setBorderPainted(false);
         btnRegresar.setContentAreaFilled(false);
-        btnRegresar.setLabel("");
         btnRegresar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnRegresarActionPerformed(evt);
@@ -109,8 +110,8 @@ public class frmAsignacion3 extends javax.swing.JFrame {
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel5.setText("Error 1");
-        pnlCalculo.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 210, -1, 20));
+        jLabel5.setText("%");
+        pnlCalculo.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 240, -1, 20));
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
@@ -165,8 +166,18 @@ public class frmAsignacion3 extends javax.swing.JFrame {
         });
         pnlCalculo.add(btnMostrarModel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 150, 40, 20));
 
+        jLabel13.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel13.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel13.setText("%");
+        pnlCalculo.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 210, -1, 20));
+
         jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/serie1.png"))); // NOI18N
         pnlCalculo.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 350, 260, 80));
+
+        jLabel12.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel12.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel12.setText("Error 1");
+        pnlCalculo.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 210, -1, 20));
 
         jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/back.jpg"))); // NOI18N
         pnlCalculo.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(-170, -50, 570, 540));
@@ -212,10 +223,10 @@ public class frmAsignacion3 extends javax.swing.JFrame {
             txtValorVerdadero.setText(String.valueOf(asig.getVv()));
             model1 = asig.metodo1(Integer.parseInt(txtCifras.getText()), 5);
             txtValorMetodo1.setText(String.valueOf(asig.getRes1()));
-            txtError1.setText(String.valueOf(asig.getEr1()));
+            txtError1.setText(String.valueOf(Math.abs(asig.getEr1())));
             model2 = asig.metodo2(Integer.parseInt(txtCifras.getText()), 5);
             txtValorMetodo2.setText(String.valueOf(1 / asig.getRes2()));
-            txtError2.setText(String.valueOf(asig.getEr2()));
+            txtError2.setText(String.valueOf(Math.abs(asig.getEr2())));
 
             if (Double.parseDouble(String.valueOf(txtError1.getText())) > Double.parseDouble(String.valueOf(txtError2.getText()))) {
                 txtConclusion.setText("EL METODO 2 ES MAS PRECISO.");
@@ -297,6 +308,8 @@ public class frmAsignacion3 extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
