@@ -39,6 +39,12 @@ public class frmAsignacion3 extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        pnlTabla = new javax.swing.JPanel();
+        jLabel10 = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        tabla1 = new javax.swing.JTable();
+        btnCerrarPanel = new javax.swing.JButton();
+        jLabel9 = new javax.swing.JLabel();
         pnlCalculo = new javax.swing.JPanel();
         btnRegresar = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
@@ -65,16 +71,37 @@ public class frmAsignacion3 extends javax.swing.JFrame {
         jLabel15 = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
-        pnlTabla = new javax.swing.JPanel();
-        jLabel10 = new javax.swing.JLabel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        tabla1 = new javax.swing.JTable();
-        btnCerrarPanel = new javax.swing.JButton();
-        jLabel9 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        pnlTabla.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel10.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel10.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel10.setText("Valores obtenidos");
+        pnlTabla.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 10, -1, 20));
+
+        tabla1.setModel(new DefaultTableModel(new Object[]{"Iteracion", "Resultado", "Error Aproximado"}, 0));
+        jScrollPane1.setViewportView(tabla1);
+
+        pnlTabla.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 30, 370, 430));
+
+        btnCerrarPanel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/flecha-de-retroceso.png"))); // NOI18N
+        btnCerrarPanel.setBorderPainted(false);
+        btnCerrarPanel.setContentAreaFilled(false);
+        btnCerrarPanel.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCerrarPanelActionPerformed(evt);
+            }
+        });
+        pnlTabla.add(btnCerrarPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 0, 30, 30));
+
+        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/back.jpg"))); // NOI18N
+        pnlTabla.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 390, 490));
+
+        getContentPane().add(pnlTabla, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 390, 490));
 
         pnlCalculo.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -199,33 +226,6 @@ public class frmAsignacion3 extends javax.swing.JFrame {
         pnlCalculo.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(-170, -50, 570, 560));
 
         getContentPane().add(pnlCalculo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 390, 490));
-
-        pnlTabla.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel10.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel10.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel10.setText("Valores obtenidos");
-        pnlTabla.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 10, -1, 20));
-
-        tabla1.setModel(new DefaultTableModel(new Object[]{"Iteracion", "Resultado", "Error Aproximado"}, 0));
-        jScrollPane1.setViewportView(tabla1);
-
-        pnlTabla.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 30, 370, 430));
-
-        btnCerrarPanel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/flecha-de-retroceso.png"))); // NOI18N
-        btnCerrarPanel.setBorderPainted(false);
-        btnCerrarPanel.setContentAreaFilled(false);
-        btnCerrarPanel.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnCerrarPanelActionPerformed(evt);
-            }
-        });
-        pnlTabla.add(btnCerrarPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 0, 30, 30));
-
-        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/back.jpg"))); // NOI18N
-        pnlTabla.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 390, 480));
-
-        getContentPane().add(pnlTabla, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 390, 480));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
