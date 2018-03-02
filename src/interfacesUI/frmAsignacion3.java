@@ -61,6 +61,9 @@ public class frmAsignacion3 extends javax.swing.JFrame {
         jLabel13 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
+        jLabel14 = new javax.swing.JLabel();
+        jLabel15 = new javax.swing.JLabel();
+        jLabel16 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         pnlTabla = new javax.swing.JPanel();
         jLabel10 = new javax.swing.JLabel();
@@ -120,8 +123,8 @@ public class frmAsignacion3 extends javax.swing.JFrame {
 
         jLabel7.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel7.setText("Concusion");
-        pnlCalculo.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 290, -1, 20));
+        jLabel7.setText("Metodo 2");
+        pnlCalculo.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 420, -1, 20));
 
         txtValorVerdadero.setEditable(false);
         pnlCalculo.add(txtValorVerdadero, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 90, 155, 20));
@@ -172,17 +175,30 @@ public class frmAsignacion3 extends javax.swing.JFrame {
         pnlCalculo.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 210, -1, 20));
 
         jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/serie1.png"))); // NOI18N
-        pnlCalculo.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 350, 260, 80));
+        pnlCalculo.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 340, 260, 50));
 
         jLabel12.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel12.setForeground(new java.awt.Color(255, 255, 255));
         jLabel12.setText("Error 1");
         pnlCalculo.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 210, -1, 20));
 
-        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/back.jpg"))); // NOI18N
-        pnlCalculo.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(-170, -50, 570, 540));
+        jLabel14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Serie2.png"))); // NOI18N
+        pnlCalculo.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 400, 230, 60));
 
-        getContentPane().add(pnlCalculo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 390, 480));
+        jLabel15.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel15.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel15.setText("Concusion");
+        pnlCalculo.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 290, -1, 20));
+
+        jLabel16.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel16.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel16.setText("Metodo 1");
+        pnlCalculo.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 350, -1, 20));
+
+        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/back.jpg"))); // NOI18N
+        pnlCalculo.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(-170, -50, 570, 560));
+
+        getContentPane().add(pnlCalculo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 390, 490));
 
         pnlTabla.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -310,6 +326,9 @@ public class frmAsignacion3 extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
